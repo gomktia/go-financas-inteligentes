@@ -29,7 +29,7 @@ export default function ConvitePage({ params }: { params: Promise<{ codigo: stri
           .from('users')
           .select('id')
           .eq('email', user.email || '')
-          .single()
+          .single<{ id: number }>()
 
         if (publicUser) setCurrentUserId(publicUser.id)
       }
