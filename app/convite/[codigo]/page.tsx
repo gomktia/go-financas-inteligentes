@@ -28,7 +28,7 @@ export default function ConvitePage({ params }: { params: Promise<{ codigo: stri
         const { data: publicUser } = await supabase
           .from('users')
           .select('id')
-          .eq('email', user.email)
+          .eq('email', user.email || '')
           .single()
 
         if (publicUser) setCurrentUserId(publicUser.id)
