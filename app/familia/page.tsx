@@ -41,7 +41,7 @@ export default function FamiliaPage() {
                     </CardHeader>
                     <CardContent>
                         <div className="text-4xl font-bold">{formatCurrency(stats.totalMes)}</div>
-                        <p className="opacity-80 mt-2 text-sm">Soma de todos os gastos marcados como "Família"</p>
+                        <p className="opacity-80 mt-2 text-sm">Soma de todos os gastos marcados como &quot;Família&quot;</p>
                     </CardContent>
                 </Card>
 
@@ -81,7 +81,7 @@ export default function FamiliaPage() {
                             <div className="py-12 flex flex-col items-center justify-center text-center text-muted-foreground">
                                 <Home className="h-12 w-12 mb-4 opacity-20" />
                                 <p>Nenhum gasto compartilhado encontrado.</p>
-                                <p className="text-sm">Marque itens como "Compartilhado" ao criar gastos ou contas.</p>
+                                <p className="text-sm">Marque itens como &quot;Compartilhado&quot; ao criar gastos ou contas.</p>
                             </div>
                         ) : (
                             <div className="divide-y">
