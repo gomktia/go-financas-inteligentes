@@ -84,7 +84,7 @@ export default function ParcelasPage() {
             <Calendar className="h-4 w-4 text-purple-500" />
           </CardHeader>
           <CardContent>
-            {/* @ts-expect-error - stats.restantePagar added in hook custom verification */}
+
             <div className="text-2xl font-bold text-purple-500">{formatCurrency(stats.restantePagar || 0)}</div>
             <p className="text-xs text-muted-foreground">Ainda a pagar</p>
           </CardContent>
