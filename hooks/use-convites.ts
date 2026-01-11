@@ -20,6 +20,14 @@ export interface InsertConvite {
   dias_validade?: number
 }
 
+export interface ConviteWithFamilia extends Convite {
+  familia?: {
+    id: number
+    nome: string
+    modo_calculo: string
+  }
+}
+
 export function useConvites() {
   const queryClient = useQueryClient()
 
@@ -116,7 +124,7 @@ export function useConvites() {
         .from('convites')
         .select('*')
         .eq('id', conviteId)
-        .single()
+        .single<{ familia_id: number }>()
 
       if (conviteError) throw conviteError
 
@@ -196,7 +204,7 @@ export function useConvites() {
           .single()
 
         if (error) throw error
-        return data
+        return data as ConviteWithFamilia
       },
       enabled: !!codigo,
       retry: false
