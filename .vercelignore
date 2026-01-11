@@ -1,0 +1,26 @@
+# Documentação (opcional - mantenha se quiser acessar via URL)
+# DATABASE_STRUCTURE.md
+# DATABASE_INDEX.md
+# DATABASE_VERIFICATION.md
+# API_DOCUMENTATION.md
+# MIGRATION_GUIDE.md
+# SUPABASE_INTEGRATION.md
+# DEPLOY_VERCEL.md
+# GUIA_RAPIDO.md
+# MELHORIAS_IMPLEMENTADAS.md
+
+# Scripts SQL
+database_setup.sql
+
+# Git
+.git/
+.gitignore
+
+# Node (se houver)
+node_modules/
+package-lock.json
+
+# Outros
+.DS_Store
+*.log
+
