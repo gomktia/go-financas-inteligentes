@@ -12,7 +12,7 @@ import { showToast } from '@/lib/toast'
 export default function ConvitePage({ params }: { params: Promise<{ codigo: string }> }) {
   const { codigo } = use(params)
   const router = useRouter()
-  // @ts-expect-error - Hook updated but types pending
+
   const { useConvitePorCodigo, aceitarConvite, recusarConvite, isAccepting } = useConvites()
   const [currentUserId, setCurrentUserId] = useState<number | null>(null)
 
