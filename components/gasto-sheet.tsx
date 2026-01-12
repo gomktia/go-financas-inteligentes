@@ -41,12 +41,13 @@ export function GastoSheet({ open, onOpenChange }: GastoSheetProps) {
 
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
-      <SheetHeader onClose={() => onOpenChange(false)}>
-        Novo Gasto
-      </SheetHeader>
-
-      <form onSubmit={handleSubmit}>
-        <SheetContent>
+      <SheetContent>
+        <SheetHeader>
+          <div className="flex items-center justify-between">
+            <span className="text-xl font-bold">Novo Gasto</span>
+          </div>
+        </SheetHeader>
+        <form onSubmit={handleSubmit} className="space-y-6 pt-6">
           {/* Descrição */}
           <div className="space-y-2">
             <label className="text-sm font-medium text-muted-foreground">
@@ -112,11 +113,10 @@ export function GastoSheet({ open, onOpenChange }: GastoSheetProps) {
                   key={tipo}
                   type="button"
                   onClick={() => setForm({ ...form, tipo_pagamento: tipo })}
-                  className={`h-12 rounded-xl border-2 font-semibold transition-all duration-200 active:scale-95 ${
-                    form.tipo_pagamento === tipo
-                      ? 'border-primary bg-primary text-primary-foreground shadow-md shadow-primary/30 scale-[0.98]'
-                      : 'border-input hover:border-primary/50 hover:bg-accent'
-                  }`}
+                  className={`h-12 rounded-xl border-2 font-semibold transition-all duration-200 active:scale-95 ${form.tipo_pagamento === tipo
+                    ? 'border-primary bg-primary text-primary-foreground shadow-md shadow-primary/30 scale-[0.98]'
+                    : 'border-input hover:border-primary/50 hover:bg-accent'
+                    }`}
                 >
                   {tipo}
                 </button>
@@ -137,26 +137,25 @@ export function GastoSheet({ open, onOpenChange }: GastoSheetProps) {
               required
             />
           </div>
-        </SheetContent>
-
-        <SheetFooter>
-          <Button
-            type="button"
-            variant="outline"
-            onClick={() => onOpenChange(false)}
-            className="flex-1 h-12 rounded-xl text-base font-semibold"
-          >
-            Cancelar
-          </Button>
-          <Button
-            type="submit"
-            disabled={isCreating}
-            className="flex-1 h-12 rounded-xl text-base font-semibold bg-primary hover:bg-primary/90 shadow-lg shadow-primary/30"
-          >
-            {isCreating ? 'Salvando...' : 'Adicionar'}
-          </Button>
-        </SheetFooter>
-      </form>
+          <SheetFooter>
+            <Button
+              type="button"
+              variant="outline"
+              onClick={() => onOpenChange(false)}
+              className="flex-1 h-12 rounded-xl text-base font-semibold"
+            >
+              Cancelar
+            </Button>
+            <Button
+              type="submit"
+              disabled={isCreating}
+              className="flex-1 h-12 rounded-xl text-base font-semibold bg-primary hover:bg-primary/90 shadow-lg shadow-primary/30"
+            >
+              {isCreating ? 'Salvando...' : 'Adicionar'}
+            </Button>
+          </SheetFooter>
+        </form>
+      </SheetContent>
     </Sheet>
   )
 }
