@@ -39,21 +39,21 @@ export function DashboardChart({ data = defaultData }: DashboardChartProps) {
           <AreaChart data={data}>
             <defs>
               <linearGradient id="colorReceitas" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#10b981" stopOpacity={0.3}/>
-                <stop offset="95%" stopColor="#10b981" stopOpacity={0}/>
+                <stop offset="5%" stopColor="#10b981" stopOpacity={0.3} />
+                <stop offset="95%" stopColor="#10b981" stopOpacity={0} />
               </linearGradient>
               <linearGradient id="colorDespesas" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#ef4444" stopOpacity={0.3}/>
-                <stop offset="95%" stopColor="#ef4444" stopOpacity={0}/>
+                <stop offset="5%" stopColor="#ef4444" stopOpacity={0.3} />
+                <stop offset="95%" stopColor="#ef4444" stopOpacity={0} />
               </linearGradient>
             </defs>
             <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" opacity={0.3} />
-            <XAxis 
-              dataKey="mes" 
+            <XAxis
+              dataKey="mes"
               stroke="hsl(var(--muted-foreground))"
               style={{ fontSize: '12px' }}
             />
-            <YAxis 
+            <YAxis
               stroke="hsl(var(--muted-foreground))"
               style={{ fontSize: '12px' }}
               tickFormatter={(value) => `R$ ${(value / 1000).toFixed(1)}k`}
@@ -65,7 +65,7 @@ export function DashboardChart({ data = defaultData }: DashboardChartProps) {
                 borderRadius: '12px',
                 padding: '12px',
               }}
-              formatter={(value: number) => [`R$ ${value.toFixed(2)}`, '']}
+              formatter={(value: any) => [`R$ ${Number(value).toFixed(2)}`, '']}
             />
             <Area
               type="monotone"
