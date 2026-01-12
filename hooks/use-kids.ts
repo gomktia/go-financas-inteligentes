@@ -38,6 +38,7 @@ export function useKids() {
 
             const { data, error } = await supabase
                 .from('kids_accounts')
+                // @ts-expect-error - Table kids_accounts exists but types pending generation
                 .insert({
                     parent_id: publicUser.id,
                     nome: newKid.nome,
