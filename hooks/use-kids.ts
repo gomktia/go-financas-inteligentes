@@ -32,7 +32,7 @@ export function useKids() {
                 .from('users')
                 .select('id')
                 .eq('auth_id', user.id)
-                .single()
+                .single<{ id: number }>()
 
             if (!publicUser) throw new Error('Public user not found')
 
